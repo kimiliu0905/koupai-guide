@@ -88,6 +88,7 @@ const guideGroups = [
 ];
 
 const app = document.querySelector("#app");
+let shouldScrollToArticle = false;
 
 function getAllTopics() {
   return guideGroups.flatMap((group) =>
@@ -123,6 +124,18 @@ function makeTopicLink(topic) {
   return `#/${topic.groupKey}/${topic.slug}`;
 }
 
+function getTopicNeighbors(activeTopic) {
+  const topics = getAllTopics();
+  const index = topics.findIndex(
+    (topic) => topic.groupKey === activeTopic.groupKey && topic.slug === activeTopic.slug,
+  );
+
+  return {
+    previous: index > 0 ? topics[index - 1] : null,
+    next: index >= 0 && index < topics.length - 1 ? topics[index + 1] : null,
+  };
+}
+
 function renderNavigation(activeTopic) {
   return guideGroups
     .map((group) => {
@@ -135,7 +148,7 @@ function renderNavigation(activeTopic) {
               : "";
 
           return `
-            <a class="guide-nav__link ${activeClass}" href="${makeTopicLink(fullTopic)}">
+            <a class="guide-nav__link ${activeClass}" href="${makeTopicLink(fullTopic)}" data-topic-link="true">
               <span>${topic.title}</span>
               <em>${topic.status}</em>
             </a>
@@ -176,6 +189,7 @@ function renderExamples(topic) {
 
 function renderTopic(topic) {
   const publicLink = `${window.location.origin}${window.location.pathname}${makeTopicLink(topic)}`;
+  const { previous, next } = getTopicNeighbors(topic);
 
   return `
     <article class="guide-article">
@@ -210,6 +224,22 @@ function renderTopic(topic) {
         <h2>分享链接</h2>
         <p>${publicLink}</p>
       </section>
+
+      <section class="guide-related" aria-label="切换其他问题">
+        <h2>继续查看</h2>
+        <div class="guide-related__actions">
+          ${
+            previous
+              ? `<a href="${makeTopicLink(previous)}" data-topic-link="true">上一个：${previous.title}</a>`
+              : `<span>已经是第一个问题</span>`
+          }
+          ${
+            next
+              ? `<a href="${makeTopicLink(next)}" data-topic-link="true">下一个：${next.title}</a>`
+              : `<span>已经是最后一个问题</span>`
+          }
+        </div>
+      </section>
     </article>
   `;
 }
@@ -234,7 +264,7 @@ function render() {
     </header>
 
     <main class="guide-layout">
-      <aside class="guide-nav" aria-label="教程目录">
+      <aside id="guide-nav" class="guide-nav" aria-label="教程目录">
         <div class="guide-nav__title">
           <span>功能目录</span>
           <small>Step 2 框架校验</small>
@@ -243,8 +273,47 @@ function render() {
       </aside>
       ${renderTopic(activeTopic)}
     </main>
+
+    <nav class="guide-mobile-actions" aria-label="手机快捷切换">
+      <button type="button" data-scroll-nav="true">目录</button>
+      ${
+        getTopicNeighbors(activeTopic).previous
+          ? `<a href="${makeTopicLink(getTopicNeighbors(activeTopic).previous)}" data-topic-link="true">上一个</a>`
+          : `<span>上一个</span>`
+      }
+      ${
+        getTopicNeighbors(activeTopic).next
+          ? `<a href="${makeTopicLink(getTopicNeighbors(activeTopic).next)}" data-topic-link="true">下一个</a>`
+          : `<span>下一个</span>`
+      }
+    </nav>
   `;
+
+  if (shouldScrollToArticle && window.matchMedia("(max-width: 860px)").matches) {
+    window.requestAnimationFrame(() => {
+      document.querySelector(".guide-article")?.scrollIntoView({ block: "start" });
+    });
+  }
+
+  shouldScrollToArticle = false;
 }
+
+document.addEventListener("click", (event) => {
+  const topicLink = event.target.closest("[data-topic-link]");
+  const scrollNav = event.target.closest("[data-scroll-nav]");
+
+  if (topicLink) {
+    shouldScrollToArticle = true;
+    if (topicLink.getAttribute("href") === window.location.hash) {
+      event.preventDefault();
+      render();
+    }
+  }
+
+  if (scrollNav) {
+    document.querySelector(".guide-nav")?.scrollIntoView({ block: "start" });
+  }
+});
 
 window.addEventListener("hashchange", render);
 render();

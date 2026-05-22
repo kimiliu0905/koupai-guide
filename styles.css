@@ -310,6 +310,63 @@ p {
   font-size: 13px;
 }
 
+.guide-related {
+  margin-top: 18px;
+  padding-top: 22px;
+  border-top: 1px solid #ececf2;
+}
+
+.guide-related h2 {
+  margin-bottom: 12px;
+  color: #27272a;
+  font-size: 18px;
+}
+
+.guide-related__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.guide-related__actions a,
+.guide-related__actions span,
+.guide-mobile-actions a,
+.guide-mobile-actions button,
+.guide-mobile-actions span {
+  border: 1px solid #dedcfb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3730a3;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.guide-related__actions a,
+.guide-related__actions span {
+  padding: 14px;
+}
+
+.guide-related__actions a:hover,
+.guide-related__actions a:focus-visible,
+.guide-mobile-actions a:hover,
+.guide-mobile-actions a:focus-visible,
+.guide-mobile-actions button:hover,
+.guide-mobile-actions button:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 2px;
+  background: #f4f3ff;
+}
+
+.guide-related__actions span,
+.guide-mobile-actions span {
+  color: #a1a1aa;
+}
+
+.guide-mobile-actions {
+  display: none;
+}
+
 @media (max-width: 860px) {
   .guide-header {
     position: static;
@@ -338,7 +395,36 @@ p {
 
   .guide-article {
     min-height: auto;
-    padding: 22px;
+    padding: 22px 22px 84px;
+  }
+
+  .guide-mobile-actions {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #e4e4ec;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 14px 40px rgba(24, 24, 27, 0.16);
+    backdrop-filter: blur(12px);
+  }
+
+  .guide-mobile-actions a,
+  .guide-mobile-actions button,
+  .guide-mobile-actions span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 10px;
+    text-align: center;
+    cursor: pointer;
   }
 }
 
@@ -354,5 +440,9 @@ p {
 
   .guide-article h1 {
     font-size: 30px;
+  }
+
+  .guide-related__actions {
+    grid-template-columns: 1fr;
   }
 }
