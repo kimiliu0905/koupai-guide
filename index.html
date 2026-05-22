@@ -12,18 +12,31 @@
   </head>
   <body>
     <main class="page-shell">
+      <header class="site-header" aria-label="站点信息">
+        <a class="brand-mark" href="./index.html" aria-label="扣排打卡教程中心首页">
+          <span class="brand-mark__dot"></span>
+          扣排指南
+        </a>
+        <span class="status-pill">公开访问测试中</span>
+      </header>
+
       <section class="hero">
-        <div class="hero__eyebrow">公开教程站 · Step 1 验证页</div>
+        <div class="hero__eyebrow">Step 1 · 公网分享验证</div>
         <h1>扣排打卡教程中心</h1>
         <p>
           这里将用于整理扣排、麦序、任务排、置顶、报备、打卡统计等功能的使用教程。
           当前页面用于先验证公网链接是否可以在手机和电脑正常访问。
         </p>
+        <div class="hero__meta" aria-label="教程特点">
+          <span>手机可读</span>
+          <span>无需登录</span>
+          <span>持续更新</span>
+        </div>
       </section>
 
       <section class="check-card" aria-labelledby="check-title">
         <h2 id="check-title">本阶段校验目标</h2>
-        <ul>
+        <ul class="check-list">
           <li>电脑浏览器可以打开这个教程站。</li>
           <li>手机浏览器可以打开同一个链接。</li>
           <li>把链接发给别人后，对方无需登录即可阅读。</li>
