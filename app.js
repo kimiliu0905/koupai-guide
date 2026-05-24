@@ -19,6 +19,18 @@ const guideGroups = [
             body: "如果当前小时没有提前配置主持，第一个点击排档的主播需要先设置本档主持。主持设置完成后，其他主播才能继续正常排档。",
           },
         ],
+        images: [
+          {
+            src: "./images/host-set-pc-01.png",
+            alt: "PC 开播助手内点击设置主持入口",
+            caption: "在打卡统计内点击“设置主持”。",
+          },
+          {
+            src: "./images/host-set-pc-02.png",
+            alt: "PC 开播助手设置主持弹窗",
+            caption: "选择本档主持后，其他主播可继续正常排档和打卡。",
+          },
+        ],
       },
       {
         slug: "faq-checkin-result",
@@ -35,6 +47,13 @@ const guideGroups = [
             body: "厅管理主要在创作服务中心的实时打卡统计中查看结果。这里更适合按小时、日、周维度做管理复盘，也方便查看排档主播的实时表现。",
           },
         ],
+        images: [
+          {
+            src: "./images/checkin-entry.png",
+            alt: "PC 开播助手打卡功能入口",
+            caption: "登录 PC 开播助手进入签约厅后，在直播工具中找到打卡功能。",
+          },
+        ],
       },
       {
         slug: "faq-task-queue",
@@ -49,6 +68,18 @@ const guideGroups = [
           {
             title: "顶麦规则",
             body: "当主播填写的任务分高于麦上已有主播的任务分时，可以把低任务主播或手速排主播顶下。被顶下的主播会收到弹窗通知，可以重新进行排档操作。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/task-setting-01.png",
+            alt: "设置排档任务入口",
+            caption: "主持可在打卡统计中查看或设置排档任务。",
+          },
+          {
+            src: "./images/task-setting-02.png",
+            alt: "排档任务设置结果",
+            caption: "任务可来自手动设置，也可按任务排、买8分数计算。",
           },
         ],
       },
@@ -97,6 +128,13 @@ const guideGroups = [
           {
             title: "管理建议",
             body: "如果主播长时间没有发言、收入没有变化、私信数据也没有明显动作，可以重点关注该主播是否存在占档、划水或未准备好上档的情况。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/private-message-stats.png",
+            alt: "实时打卡统计中的私信数据",
+            caption: "实时查看排档主播每小时私信人数，辅助判断主播是否真的在写作业。",
           },
         ],
       },
@@ -365,6 +403,13 @@ const guideGroups = [
             body: "如果厅里有麦序福利表，可以在这里上传。上传后，主播可以在 PC 开播助手里查看麦序福利表。",
           },
         ],
+        images: [
+          {
+            src: "./images/checkin-global-setting.png",
+            alt: "打卡全局综合设置",
+            caption: "打卡综合设置中可控制奖励金额展示、麦序福利表展示等能力。",
+          },
+        ],
       },
       {
         slug: "reward-display",
@@ -381,6 +426,13 @@ const guideGroups = [
             body: "配置完成后，主播会在 PC 开播助手的打卡统计相关位置看到奖励金额或麦序福利表。",
           },
         ],
+        images: [
+          {
+            src: "./images/mic-benefit-image.png",
+            alt: "麦序福利图配置示例",
+            caption: "上传麦序福利图后，主播可在 PC 开播助手内查看。",
+          },
+        ],
       },
       {
         slug: "adjust-account",
@@ -395,6 +447,23 @@ const guideGroups = [
           {
             title: "重要说明",
             body: "调账只调整打卡统计里的结果，不会调整平台实际收益。调账后统计里会显示“调”字，代表这一笔记录有调整过，方便后续复盘和减少争议。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/adjust-account-01.png",
+            alt: "调账操作第一步",
+            caption: "调账操作示例 1：选择需要调整的记录。",
+          },
+          {
+            src: "./images/adjust-account-02.png",
+            alt: "调账操作第二步",
+            caption: "调账操作示例 2：填写调整对象和调整结果。",
+          },
+          {
+            src: "./images/adjust-account-03.png",
+            alt: "调账操作第三步",
+            caption: "调账操作示例 3：调整后统计结果会显示调账标记。",
           },
         ],
       },
@@ -417,6 +486,13 @@ const guideGroups = [
             body: "打卡小秘书会按小时、日、周三个维度发送相关结果，方便管理及时跟进。",
           },
         ],
+        images: [
+          {
+            src: "./images/checkin-admin-02.png",
+            alt: "打卡小秘书私信报告示例",
+            caption: "PC 打卡管理员可收到打卡小秘书发送的小时、日、周维度报告。",
+          },
+        ],
       },
       {
         slug: "task-calc",
@@ -431,6 +507,18 @@ const guideGroups = [
           {
             title: "后续说明",
             body: "如果厅里有特殊任务口径，后续可以在具体规则页补充对应说明。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/host-schedule-01.png",
+            alt: "主持档设置入口",
+            caption: "在创作服务中心配置每周每小时对应的主持。",
+          },
+          {
+            src: "./images/host-schedule-02.png",
+            alt: "主持档设置明细",
+            caption: "主持档配置后，会自动同步到 PC 开播助手的扣排和打卡中。",
           },
         ],
       },
@@ -449,6 +537,18 @@ const guideGroups = [
             body: "设置完成后，每个小时会自动在 PC 开播助手的扣排和打卡内生效该主持。主播扣排时无需再手动设置主持。",
           },
         ],
+        images: [
+          {
+            src: "./images/light-reward-01.png",
+            alt: "收光奖励设置入口",
+            caption: "设置收光规则后，次小时生效。",
+          },
+          {
+            src: "./images/light-reward-02.png",
+            alt: "收光奖励规则配置",
+            caption: "直播间达到收光条件后，系统会自动统计收光明细。",
+          },
+        ],
       },
       {
         slug: "light-reward",
@@ -465,6 +565,18 @@ const guideGroups = [
             body: "收光明细会在 PC 开播助手内展示，同时也会展示收光记录，方便主持和厅管理核对。",
           },
         ],
+        images: [
+          {
+            src: "./images/all-mic-reward-01.png",
+            alt: "全麦奖励设置入口",
+            caption: "设置全麦规则后，次小时生效。",
+          },
+          {
+            src: "./images/all-mic-reward-02.png",
+            alt: "全麦奖励规则配置",
+            caption: "达到全麦标准后，由主持分配全麦并记录到打卡统计。",
+          },
+        ],
       },
       {
         slug: "all-mic-reward",
@@ -479,6 +591,13 @@ const guideGroups = [
           {
             title: "记录方式",
             body: "主持分配完成后，结果会记录到打卡统计内，方便后续查看和核对。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/daily-mic-reward.png",
+            alt: "日麦序奖励设置",
+            caption: "日麦序奖励设置后，会统计到创作中心实时打卡统计内。",
           },
         ],
       },
@@ -1001,6 +1120,28 @@ function renderCustomSections(topic) {
     .join("");
 }
 
+function renderImages(topic) {
+  if (!topic.images?.length) return "";
+
+  return `
+    <section class="guide-section">
+      <h2>配图参考</h2>
+      <div class="guide-image-grid">
+        ${topic.images
+          .map(
+            (image) => `
+              <figure class="guide-figure">
+                <img src="${image.src}" alt="${image.alt}" loading="lazy" />
+                <figcaption>${image.caption}</figcaption>
+              </figure>
+            `,
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderTopic(topic) {
   const { previous, next } = getTopicNeighbors(topic);
   const articleBody =
@@ -1038,6 +1179,7 @@ function renderTopic(topic) {
       <p class="guide-article__summary">${topic.summary}</p>
 
       ${articleBody}
+      ${renderImages(topic)}
 
       <section class="guide-related" aria-label="切换其他问题">
         <h2>继续查看</h2>

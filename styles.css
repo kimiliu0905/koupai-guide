@@ -291,6 +291,34 @@ p {
   font-size: 14px;
 }
 
+.guide-image-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.guide-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fffdf7;
+}
+
+.guide-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+}
+
+.guide-figure figcaption {
+  padding: 10px 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .guide-related {
   margin-top: 20px;
   padding-top: 24px;
