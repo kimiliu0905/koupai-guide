@@ -21,14 +21,14 @@ const guideGroups = [
         ],
         images: [
           {
-            src: "./images/host-set-pc-01.png",
-            alt: "PC 开播助手内点击设置主持入口",
-            caption: "在打卡统计内点击“设置主持”。",
+            src: "./images/wiki-faq-host-01.png",
+            alt: "创作服务中心设置一周主持",
+            caption: "在创作服务中心-扣排/打卡设置内，可以设置一周主持。",
           },
           {
-            src: "./images/host-set-pc-02.png",
-            alt: "PC 开播助手设置主持弹窗",
-            caption: "选择本档主持后，其他主播可继续正常排档和打卡。",
+            src: "./images/wiki-faq-host-02.png",
+            alt: "第一个排档主播设置主持",
+            caption: "如果没有提前配置主持，第一个排档的主播需要先设置主持。",
           },
         ],
       },
@@ -49,9 +49,14 @@ const guideGroups = [
         ],
         images: [
           {
-            src: "./images/checkin-entry.png",
-            alt: "PC 开播助手打卡功能入口",
-            caption: "登录 PC 开播助手进入签约厅后，在直播工具中找到打卡功能。",
+            src: "./images/wiki-faq-checkin-result-01.png",
+            alt: "实时打卡统计入口",
+            caption: "点击实时打卡统计，可按小时、日、周查看打卡结果。",
+          },
+          {
+            src: "./images/wiki-faq-checkin-result-02.png",
+            alt: "实时打卡统计结果页",
+            caption: "厅管理可在实时打卡统计中查看排档、打卡和主播表现结果。",
           },
         ],
       },
@@ -69,12 +74,16 @@ const guideGroups = [
             title: "顶麦规则",
             body: "当主播填写的任务分高于麦上已有主播的任务分时，可以把低任务主播或手速排主播顶下。被顶下的主播会收到弹窗通知，可以重新进行排档操作。",
           },
-        ],
+        
+          {
+            title: "后续优化",
+            body: "任务排正在优化中，下个版本将支持无需手速排排满，也可以直接任务排。",
+          },],
         images: [
           {
-            src: "./images/task-setting-01.png",
-            alt: "设置排档任务入口",
-            caption: "主持可在打卡统计中查看或设置排档任务。",
+            src: "./images/wiki-faq-task-queue-01.png",
+            alt: "任务排入口状态",
+            caption: "手速排排满以后，才可进行任务排（优化中）。",
           },
           {
             src: "./images/task-setting-02.png",
@@ -129,12 +138,26 @@ const guideGroups = [
             title: "管理建议",
             body: "如果主播长时间没有发言、收入没有变化、私信数据也没有明显动作，可以重点关注该主播是否存在占档、划水或未准备好上档的情况。",
           },
-        ],
+        
+          {
+            title: "打卡小秘书提醒",
+            body: "除此以外，每档结束后，打卡小秘书会向打卡管理员和厅主发送上个档打卡结果，厅管理也可以结合私信报告做复盘。",
+          },],
         images: [
           {
             src: "./images/private-message-stats.png",
             alt: "实时打卡统计中的私信数据",
             caption: "实时查看排档主播每小时私信人数，辅助判断主播是否真的在写作业。",
+          },
+          {
+            src: "./images/wiki-faq-homework-01.png",
+            alt: "打卡小秘书发送档期结果",
+            caption: "每档结束后，打卡小秘书会向打卡管理员和厅主发送上个档打卡结果。",
+          },
+          {
+            src: "./images/wiki-faq-homework-02.png",
+            alt: "打卡小秘书结果详情",
+            caption: "打卡小秘书结果可辅助厅管理判断主播当档表现。",
           },
         ],
       },
@@ -209,6 +232,13 @@ const guideGroups = [
             body: "创作服务中心负责配置规则，PC 开播助手负责让主播和主持实际使用。后台规则配置完成后，会影响主播端的扣排弹窗、排麦表、打卡统计和后续经营诊断。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-config-entry-01.png",
+            alt: "创作服务中心扣排打卡设置入口",
+            caption: "创作服务中心-扣排/打卡设置入口。",
+          },
+        ],
       },
       {
         slug: "permission-rule",
@@ -239,6 +269,13 @@ const guideGroups = [
           {
             title: "举例说明",
             body: "如果 10:20 修改了扣排时间、定排时间或打卡规则，通常从 11:00 后的档期开始按新规则执行。当前 10 点档仍按原规则处理。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-effective-time-01.png",
+            alt: "配置次小时生效提示",
+            caption: "扣排和打卡设置保存后，均次小时生效。",
           },
         ],
       },
@@ -280,6 +317,13 @@ const guideGroups = [
             body: "扣排时间会影响主播什么时候看到自动弹窗。如果主播错过自动弹窗，也可以主动点击扣排按钮打开排麦表。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-queue-time-01.png",
+            alt: "扣排时间设置",
+            caption: "扣排时间决定每小时什么时候自动弹出排麦表。",
+          },
+        ],
       },
       {
         slug: "fixed-queue-time",
@@ -294,6 +338,18 @@ const guideGroups = [
           {
             title: "管理影响",
             body: "定排时间越早，主播排档窗口越短；定排时间越晚，主播有更多时间参与排档。厅管理可以根据本厅排档节奏设置。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-fixed-queue-time-01.png",
+            alt: "定排时间设置入口",
+            caption: "定排时间用于确定下一个档的定排人员。",
+          },
+          {
+            src: "./images/wiki-fixed-queue-time-02.png",
+            alt: "定排时间规则配置",
+            caption: "到达定排时间后，主播不能再正常手速排或任务排。",
           },
         ],
       },
@@ -312,6 +368,23 @@ const guideGroups = [
             body: "如果 2-7 麦已经没有空位，主播不能再补排，只能买8。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-after-fixed-queue-01.png",
+            alt: "定排后添加定排主播入口",
+            caption: "主持可快速从麦上添加定排主播。",
+          },
+          {
+            src: "./images/wiki-after-fixed-queue-02.png",
+            alt: "从麦上添加定排主播步骤",
+            caption: "主持快速从麦上添加定排主播步骤。",
+          },
+          {
+            src: "./images/wiki-after-fixed-queue-03.png",
+            alt: "主持帮助主播补排",
+            caption: "主持可快速帮主播补排。",
+          },
+        ],
       },
       {
         slug: "top-score",
@@ -326,6 +399,13 @@ const guideGroups = [
           {
             title: "是否允许被顶",
             body: "如果厅里允许更高任务顶掉置顶，可以设置一个正常的置顶分。如果厅里不希望置顶被更高任务顶掉，可以把置顶分设置为很高的数字，例如 9999。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-top-score-01.png",
+            alt: "置顶分设置",
+            caption: "置顶分可简单理解为手速置顶对应分数。",
           },
         ],
       },
@@ -348,6 +428,18 @@ const guideGroups = [
             body: "当前一个档只允许一个主播置顶。主播被更高任务顶下时，也会算作消耗一次置顶次数。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-add-top-anchor-01.png",
+            alt: "添加置顶主播入口",
+            caption: "在扣排设置中添加置顶主播。",
+          },
+          {
+            src: "./images/wiki-add-top-anchor-02.png",
+            alt: "设置主播置顶次数",
+            caption: "选择主播后，可设置本周期内可用的置顶次数。",
+          },
+        ],
       },
       {
         slug: "report-rule",
@@ -362,6 +454,17 @@ const guideGroups = [
           {
             title: "回档要求",
             body: "主播报备后需要点击“回”来表示已回到本档。如果报备超时未回，系统会将主播标记为黑麦。",
+          },
+        
+          {
+            title: "后续开放",
+            body: "后续会开放报备次数、报备时间等相关配置给厅自行配置。",
+          },],
+        images: [
+          {
+            src: "./images/wiki-report-rule-01.png",
+            alt: "报备规则设置",
+            caption: "报备规则用于配置报备时间、次数等能力。",
           },
         ],
       },
@@ -378,6 +481,13 @@ const guideGroups = [
           {
             title: "配置说明",
             body: "当前黑麦统计默认不支持主持手动勾选。如需调整相关权限或自动统计时长，后续可开放给厅主自行配置。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-blackout-config-01.png",
+            alt: "黑麦统计配置",
+            caption: "黑麦统计配置会影响系统自动识别黑麦的规则。",
           },
         ],
       },
@@ -488,6 +598,11 @@ const guideGroups = [
         ],
         images: [
           {
+            src: "./images/wiki-checkin-admin-01.png",
+            alt: "打卡管理员设置",
+            caption: "设置 PC 打卡管理员后，该账号可收到打卡小秘书私信报告。",
+          },
+          {
             src: "./images/checkin-admin-02.png",
             alt: "打卡小秘书私信报告示例",
             caption: "PC 打卡管理员可收到打卡小秘书发送的小时、日、周维度报告。",
@@ -564,6 +679,16 @@ const guideGroups = [
             alt: "收光奖励规则配置",
             caption: "直播间达到收光条件后，系统会自动统计收光明细。",
           },
+          {
+            src: "./images/wiki-light-reward-03.png",
+            alt: "自动统计收光",
+            caption: "达到收光条件后，系统会自动统计收光。",
+          },
+          {
+            src: "./images/wiki-light-reward-04.png",
+            alt: "查看收光记录",
+            caption: "可在打卡统计中查看收光记录。",
+          },
         ],
       },
       {
@@ -591,6 +716,26 @@ const guideGroups = [
             src: "./images/all-mic-reward-02.png",
             alt: "全麦奖励规则配置",
             caption: "达到全麦标准后，由主持分配全麦并记录到打卡统计。",
+          },
+          {
+            src: "./images/wiki-all-mic-reward-03.png",
+            alt: "全麦奖励设置示例一",
+            caption: "全麦奖励配置示例。",
+          },
+          {
+            src: "./images/wiki-all-mic-reward-04.png",
+            alt: "全麦奖励设置示例二",
+            caption: "全麦奖励配置明细。",
+          },
+          {
+            src: "./images/wiki-all-mic-reward-05.png",
+            alt: "全麦分配操作示例一",
+            caption: "达到全麦标准后，由主持进行全麦分配。",
+          },
+          {
+            src: "./images/wiki-all-mic-reward-06.png",
+            alt: "全麦分配操作示例二",
+            caption: "分配完成后会进入打卡统计记录。",
           },
         ],
       },
@@ -655,6 +800,13 @@ const guideGroups = [
             body: "主持设置完成后，其他主播才能正常进行排档操作。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-set-current-host-01.png",
+            alt: "本档主持设置",
+            caption: "如果后台未提前设置主持，第一个排档主播需要先设置本档主持。",
+          },
+        ],
       },
       {
         slug: "speed-queue",
@@ -671,6 +823,13 @@ const guideGroups = [
             body: "下一个版本将优化为无需手速排排满，也可以进行任务排。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-speed-queue-01.png",
+            alt: "手速排操作",
+            caption: "手速排是主播正常抢 2-7 麦的基础方式。",
+          },
+        ],
       },
       {
         slug: "task-queue",
@@ -685,6 +844,13 @@ const guideGroups = [
           {
             title: "顶麦规则",
             body: "当主播填写的任务分大于麦上已有任务分时，可以将麦上的低任务主播或手速排主播顶下。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-task-queue-01.png",
+            alt: "任务排操作",
+            caption: "任务排用于主播用任务分竞争 2-7 麦。",
           },
         ],
       },
@@ -744,7 +910,7 @@ const guideGroups = [
           },
           {
             title: "不可取排",
-            body: "任务排、置顶和买8不支持取排。当前取排仅支持自己取排。",
+            body: "任务排、置顶和买8不支持主播自行取排。主持可在打卡统计中点击“移除定排主播”，实现主持取排。",
           },
         ],
       },
@@ -761,6 +927,18 @@ const guideGroups = [
           {
             title: "回档要求",
             body: "主播报备后需要点击“回”，表示已经回到本档。如果报备超时未回，系统会将主播标记为黑麦。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-report-return-01.png",
+            alt: "报备后点击回",
+            caption: "报备后，主播需要点击“回”。",
+          },
+          {
+            src: "./images/wiki-report-return-02.png",
+            alt: "报备倒计时",
+            caption: "报备倒计时可在排麦表中查看，超时后排麦表中会显示异常。",
           },
         ],
       },
@@ -784,6 +962,18 @@ const guideGroups = [
           {
             title: "创作服务中心",
             body: "厅管理可以在创作服务中心的实时打卡统计中查看统计结果，更适合按小时、日、周维度做管理复盘。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-view-checkin-result-01.png",
+            alt: "实时打卡统计入口",
+            caption: "点击实时打卡统计，可按小时、日、周查看打卡结果。",
+          },
+          {
+            src: "./images/wiki-view-checkin-result-02.png",
+            alt: "实时打卡统计结果页",
+            caption: "厅管理可在实时打卡统计中查看打卡结果。",
           },
         ],
       },
@@ -822,6 +1012,18 @@ const guideGroups = [
             body: "如果某个档后续有收礼，可以补今日欠任务，并展示在可补任务中。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-task-complete-01.png",
+            alt: "打卡统计查看排档任务",
+            caption: "可在打卡统计中查看排档任务。",
+          },
+          {
+            src: "./images/wiki-task-complete-02.png",
+            alt: "任务来源与修改",
+            caption: "任务来自扣排，主持也可进行修改设置，最终以打卡统计为准。",
+          },
+        ],
       },
       {
         slug: "mic-check",
@@ -838,20 +1040,11 @@ const guideGroups = [
             body: "当定排主播收入大于 100 分时，系统会自动勾选麦序。",
           },
         ],
-      },
-      {
-        slug: "valid-mic-check",
-        title: "有效麦序勾选",
-        status: "统计",
-        summary: "有效麦序用于判断主播是否真正形成有效演出。",
-        sections: [
+        images: [
           {
-            title: "勾选方式",
-            body: "有效麦序可以由主持手动勾选或取消勾选。系统也会根据收入等规则自动判断。",
-          },
-          {
-            title: "管理用途",
-            body: "有效麦序会进入后续实时打卡统计和经营诊断，用来判断主播排档是否真正产生有效表现。",
+            src: "./images/wiki-mic-check-01.png",
+            alt: "麦序勾选",
+            caption: "主持可以在打卡统计中手动勾选或取消勾选麦序。",
           },
         ],
       },
@@ -870,20 +1063,11 @@ const guideGroups = [
             body: "黑麦统计结果会进入实时打卡统计，也会作为经营诊断识别异常主播的重要依据。",
           },
         ],
-      },
-      {
-        slug: "light-all-mic-record",
-        title: "收光与全麦记录",
-        status: "统计",
-        summary: "达到条件后，收光和全麦记录会展示在打卡统计中。",
-        sections: [
+        images: [
           {
-            title: "收光记录",
-            body: "直播间达到收光条件后，系统会记录收光明细并展示在对应统计位置。",
-          },
-          {
-            title: "全麦记录",
-            body: "达到全麦标准后，由主持进行全麦分配，分配结果会记录到打卡统计中。",
+            src: "./images/wiki-blackout-stats-01.png",
+            alt: "黑麦统计结果",
+            caption: "黑麦统计用于识别排档后未正常活跃的主播。",
           },
         ],
       },
@@ -900,6 +1084,13 @@ const guideGroups = [
           {
             title: "判断参考",
             body: "建议结合实时私信人数、当小时收入变化和直播间活跃情况一起判断。如果三者都没有明显动作，就需要重点关注该主播是否存在占档或划水情况。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-private-message-tip-01.png",
+            alt: "实时私信数据查看",
+            caption: "厅管理可通过实时私信数据判断主播是否真的在维护用户。",
           },
         ],
       },
@@ -929,6 +1120,13 @@ const guideGroups = [
             body: "目前该能力仅对高频使用扣排与打卡的厅开放。原因是好的分析结果需要前置完成扣排和打卡，避免展示错误信息或空数据。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-today-diagnosis-01.png",
+            alt: "今日主播排档分析",
+            caption: "今日主播排档分析帮助厅管理快速识别主播排档效果和黑麦异常。",
+          },
+        ],
       },
       {
         slug: "weekly-income",
@@ -945,6 +1143,13 @@ const guideGroups = [
             body: "如果收入结构不健康，厅管理可以及时调整主播培养、排档分配和重点跟进策略。",
           },
         ],
+        images: [
+          {
+            src: "./images/wiki-weekly-income-01.png",
+            alt: "厅收入健康度诊断",
+            caption: "厅收入健康度诊断用于分析厅收入结构是否健康。",
+          },
+        ],
       },
       {
         slug: "weekly-user",
@@ -959,6 +1164,13 @@ const guideGroups = [
           {
             title: "风险预警",
             body: "如果某些用户流水出现较大异常波动，系统会在这里给厅管理预警，帮助及时关注用户关系和主播承接情况。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-weekly-user-01.png",
+            alt: "厅用户贡献结构诊断",
+            caption: "厅用户贡献结构诊断用于判断厅内用户贡献结构是否健康。",
           },
         ],
       },
@@ -979,6 +1191,13 @@ const guideGroups = [
           {
             title: "标杆主播与管理动作",
             body: "每周也可能出现值得表扬的标杆主播。系统会在排档总结里给厅管理提示，并输出下一步管理动作建议。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/wiki-weekly-followup-01.png",
+            alt: "本周排档异常跟进总结",
+            caption: "本周排档异常跟进总结用于提示持续异常、风险主播和标杆主播。",
           },
         ],
       },
