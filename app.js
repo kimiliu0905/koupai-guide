@@ -509,18 +509,6 @@ const guideGroups = [
             body: "如果厅里有特殊任务口径，后续可以在具体规则页补充对应说明。",
           },
         ],
-        images: [
-          {
-            src: "./images/host-schedule-01.png",
-            alt: "主持档设置入口",
-            caption: "在创作服务中心配置每周每小时对应的主持。",
-          },
-          {
-            src: "./images/host-schedule-02.png",
-            alt: "主持档设置明细",
-            caption: "主持档配置后，会自动同步到 PC 开播助手的扣排和打卡中。",
-          },
-        ],
       },
       {
         slug: "host-schedule",
@@ -539,14 +527,14 @@ const guideGroups = [
         ],
         images: [
           {
-            src: "./images/light-reward-01.png",
-            alt: "收光奖励设置入口",
-            caption: "设置收光规则后，次小时生效。",
+            src: "./images/host-schedule-01.png",
+            alt: "主持档设置入口",
+            caption: "在创作服务中心配置每周每小时对应的主持。",
           },
           {
-            src: "./images/light-reward-02.png",
-            alt: "收光奖励规则配置",
-            caption: "直播间达到收光条件后，系统会自动统计收光明细。",
+            src: "./images/host-schedule-02.png",
+            alt: "主持档设置明细",
+            caption: "主持档配置后，会自动同步到 PC 开播助手的扣排和打卡中。",
           },
         ],
       },
@@ -567,14 +555,14 @@ const guideGroups = [
         ],
         images: [
           {
-            src: "./images/all-mic-reward-01.png",
-            alt: "全麦奖励设置入口",
-            caption: "设置全麦规则后，次小时生效。",
+            src: "./images/light-reward-01.png",
+            alt: "收光奖励设置入口",
+            caption: "设置收光规则后，次小时生效。",
           },
           {
-            src: "./images/all-mic-reward-02.png",
-            alt: "全麦奖励规则配置",
-            caption: "达到全麦标准后，由主持分配全麦并记录到打卡统计。",
+            src: "./images/light-reward-02.png",
+            alt: "收光奖励规则配置",
+            caption: "直播间达到收光条件后，系统会自动统计收光明细。",
           },
         ],
       },
@@ -595,9 +583,14 @@ const guideGroups = [
         ],
         images: [
           {
-            src: "./images/daily-mic-reward.png",
-            alt: "日麦序奖励设置",
-            caption: "日麦序奖励设置后，会统计到创作中心实时打卡统计内。",
+            src: "./images/all-mic-reward-01.png",
+            alt: "全麦奖励设置入口",
+            caption: "设置全麦规则后，次小时生效。",
+          },
+          {
+            src: "./images/all-mic-reward-02.png",
+            alt: "全麦奖励规则配置",
+            caption: "达到全麦标准后，由主持分配全麦并记录到打卡统计。",
           },
         ],
       },
@@ -614,6 +607,13 @@ const guideGroups = [
           {
             title: "查看位置",
             body: "设置后，日麦序奖励会进入创作中心实时打卡统计，厅管理可以在统计结果中查看。",
+          },
+        ],
+        images: [
+          {
+            src: "./images/daily-mic-reward.png",
+            alt: "日麦序奖励设置",
+            caption: "日麦序奖励设置后，会统计到创作中心实时打卡统计内。",
           },
         ],
       },
