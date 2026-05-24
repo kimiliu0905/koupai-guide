@@ -1285,6 +1285,30 @@ function scrollArticleToTop() {
   });
 }
 
+function closeImagePreview() {
+  document.querySelector(".image-preview")?.remove();
+  document.body.classList.remove("is-preview-open");
+}
+
+function openImagePreview(image) {
+  closeImagePreview();
+
+  document.body.classList.add("is-preview-open");
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="image-preview" role="dialog" aria-modal="true" aria-label="图片预览">
+        <button class="image-preview__backdrop" type="button" data-close-preview="true" aria-label="关闭图片预览"></button>
+        <div class="image-preview__panel">
+          <button class="image-preview__close" type="button" data-close-preview="true">关闭</button>
+          <img src="${image.src}" alt="${image.alt}" />
+          <p>${image.caption}</p>
+        </div>
+      </div>
+    `,
+  );
+}
+
 function renderNavigation(activeTopic) {
   return guideGroups
     .map((group) => {
@@ -1368,7 +1392,10 @@ function renderImages(topic) {
           .map(
             (image) => `
               <figure class="guide-figure">
-                <img src="${image.src}" alt="${image.alt}" loading="lazy" />
+                <button class="guide-figure__preview" type="button" data-preview-image="true" data-src="${image.src}" data-alt="${image.alt}" data-caption="${image.caption}" aria-label="放大查看：${image.alt}">
+                  <img src="${image.src}" alt="${image.alt}" loading="lazy" />
+                  <span>点击放大</span>
+                </button>
                 <figcaption>${image.caption}</figcaption>
               </figure>
             `,
@@ -1494,6 +1521,22 @@ function render() {
 document.addEventListener("click", (event) => {
   const topicLink = event.target.closest("[data-topic-link]");
   const scrollNav = event.target.closest("[data-scroll-nav]");
+  const previewButton = event.target.closest("[data-preview-image]");
+  const closePreview = event.target.closest("[data-close-preview]");
+
+  if (closePreview) {
+    closeImagePreview();
+    return;
+  }
+
+  if (previewButton) {
+    openImagePreview({
+      src: previewButton.dataset.src,
+      alt: previewButton.dataset.alt,
+      caption: previewButton.dataset.caption,
+    });
+    return;
+  }
 
   if (topicLink) {
     shouldScrollToArticle = true;
@@ -1506,6 +1549,12 @@ document.addEventListener("click", (event) => {
 
   if (scrollNav) {
     document.querySelector(".guide-nav")?.scrollIntoView({ block: "start" });
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeImagePreview();
   }
 });
 
