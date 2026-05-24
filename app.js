@@ -1221,6 +1221,10 @@ const app = document.querySelector("#app");
 let shouldScrollToArticle = false;
 let pendingNavScrollTop = 0;
 
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
 function getAllTopics() {
   return guideGroups.flatMap((group) =>
     group.topics.map((topic) => ({
@@ -1265,6 +1269,20 @@ function getTopicNeighbors(activeTopic) {
     previous: index > 0 ? topics[index - 1] : null,
     next: index >= 0 && index < topics.length - 1 ? topics[index + 1] : null,
   };
+}
+
+function scrollArticleToTop() {
+  const article = document.querySelector(".guide-article");
+  if (!article) return;
+
+  const headerOffset = window.matchMedia("(max-width: 860px)").matches ? 0 : 96;
+  const top = article.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: Math.max(top, 0),
+    left: 0,
+    behavior: "auto",
+  });
 }
 
 function renderNavigation(activeTopic) {
@@ -1422,10 +1440,11 @@ function renderTopic(topic) {
 function render() {
   const activeTopic = findTopic(getRoute());
   const navScrollTop = pendingNavScrollTop || document.querySelector(".guide-nav")?.scrollTop || 0;
+  const shouldScroll = shouldScrollToArticle;
 
   app.innerHTML = `
     <header class="guide-header">
-      <a class="guide-brand" href="#/${guideGroups[0].key}/${guideGroups[0].topics[0].slug}">
+      <a class="guide-brand" href="#/${guideGroups[0].key}/${guideGroups[0].topics[0].slug}" data-topic-link="true">
         <span class="guide-brand__mark">PC</span>
         <span>
           <strong>PC开播助手·排档经营分析使用教程</strong>
@@ -1463,8 +1482,8 @@ function render() {
     const nav = document.querySelector(".guide-nav");
     if (nav) nav.scrollTop = navScrollTop;
 
-    if (shouldScrollToArticle) {
-      document.querySelector(".guide-article")?.scrollIntoView({ block: "start" });
+    if (shouldScroll) {
+      scrollArticleToTop();
     }
   });
 
